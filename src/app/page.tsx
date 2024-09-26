@@ -1,6 +1,5 @@
-
 import getAllCountries from '@/services/getAllCountries';
-import styles from "./page.module.css";
+import styles from './page.module.css';
 import { Country } from '@/types/Country';
 import CountryCard from '@/components/CountryCard';
 
