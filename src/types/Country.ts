@@ -48,7 +48,7 @@ export type Country = {
     startOfWeek: string,
     capitalInfo: {
       latlng: [number, number],
-    },
+    } | null,
     postalCode: {
       format: string,
       regex: string
