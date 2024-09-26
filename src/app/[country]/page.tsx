@@ -34,7 +34,7 @@ export default async function Country({ params: {country} }: Props) {
 
   return (
     <div className={styles.page}>
-      <Image src={c.flags.png} alt={c.name.common} width={500} height={300} />
+      <Image className={styles.img} src={c.flags.png} alt={c.name.common} width={500} height={300} />
       <div className={styles.content}>
         <h1>{c.name.common}</h1>
         <p>Population: {c.population.toLocaleString()}</p>
