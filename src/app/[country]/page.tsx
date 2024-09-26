@@ -15,7 +15,7 @@ export async function generateStaticParams() {
   const countries: Country[] = await getAllCountries();
 
   return countries.map((country) => ({
-    slug: country.name.common,
+    country: country.name.common,
   }));
 }
 
@@ -42,8 +42,8 @@ export default async function Country({ params: {country} }: Props) {
         <p>Capital: {c.capital}</p>
         <p>Area: {c.area.toLocaleString()} km²</p>
         <p>Timezones: {c.timezones.join(", ")}</p>
-        <p>Currencies: {Object.values(c.currencies).map((currency) => currency.name).join(", ")}</p>
-        <p>Languages: {Object.values(c.languages).join(", ")}</p>
+        {c.currencies && <p>Currencies: {Object.values(c.currencies).map((currency) => currency.name).join(", ")}</p>}
+        {c.languages && <p>Languages: {Object.values(c.languages).join(", ")}</p>}
         {c.borders && <p>Borders: {c.borders.join(", ")}</p>}
         <p>Continent: {c.continents.join(", ")}</p>
         <p>Google Maps: <a href={c.maps.googleMaps}>Link</a></p>

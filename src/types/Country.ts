@@ -14,7 +14,7 @@ export type Country = {
     currencies: Record<string, {
       name: string,
       symbol: string
-    }>,
+    }> | null,
     idd: {
       root: string,
       suffixes: string[]
@@ -23,7 +23,7 @@ export type Country = {
     altSpellings: string[],
     region: string,
     subregion: string,
-    languages: Record<string, string>,
+    languages: Record<string, string> | null,
     latlng: [number, number],
     landlocked: boolean,
     borders?: string[],
